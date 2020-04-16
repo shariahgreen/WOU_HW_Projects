@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>HW 1</title>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1>Weekly Scheduler</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>Enter your work schedule:</h2>
+                <p>Please enter your work hours from 8am to 5pm rounded to the nearest half hour in the format <br> hour:minute-hour:minute <br> (ie. 08:00-09:00)</p>
+                <form id="scheduleForm">
+                    <div class="form-group row">
+                        <label for="monday" class="col-form-label">Monday</label>
+                        <div class="col">
+                            <input type="string" id="monday" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="tuesday" class="col-form-label">Tuesday</label>
+                        <div class="col">
+                            <input type="string" id="tuesday" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="wednesday" class="col-form-label">Wednesday</label>
+                        <div class="col">
+                            <input type="string" id="wednesday" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="thursday" class="col-form-label">Thursday</label>
+                        <div class="col">
+                            <input type="string" id="thursday" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="friday" class="col-form-label">Friday</label>
+                        <div class="col">
+                            <input type="string" id="friday" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="saturday" class="col-form-label">Saturday</label>
+                        <div class="col">
+                            <input type="string" id="saturday" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="sunday" class="col-form-label">Sunday</label>
+                        <div class="col">
+                            <input type="string" id="sunday" class="form-control">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Generate Schedule</button>    
+                </form>
+            </div>
+            <div class="col-sm-8">
+                <h2>Schedule</h2>
+                <table id="sched">
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                        <th>Sunday</th>
+                    </tr>
+                    <tr>
+                        <td>8:00am</td>
+                        <td id="mon1"></td>
+                        <td id="tue1"></td>
+                        <td id="wed1"></td>
+                        <td id="thu1"></td>
+                        <td id="fri1"></td>
+                        <td id="sat1"></td>
+                        <td id="sun1"></td>
+                    </tr>
+                    <tr>
+                        <td>8:30am</td>
+                        <td id="mon2"></td>
+                        <td id="tue2"></td>
+                        <td id="wed2"></td>
+                        <td id="thu2"></td>
+                        <td id="fri2"></td>
+                        <td id="sat2"></td>
+                        <td id="sun2"></td>
+                    </tr>
+                    <tr>
+                        <td>9:00am</td>
+                        <td id="mon3"></td>
+                        <td id="tue3"></td>
+                        <td id="wed3"></td>
+                        <td id="thu3"></td>
+                        <td id="fri3"></td>
+                        <td id="sat3"></td>
+                        <td id="sun3"></td>
+                    </tr>
+                    <tr>
+                        <td>9:30am</td>
+                        <td id="mon4"></td>
+                        <td id="tue4"></td>
+                        <td id="wed4"></td>
+                        <td id="thu4"></td>
+                        <td id="fri4"></td>
+                        <td id="sat4"></td>
+                        <td id="sun4"></td>
+                    </tr>
+                    <tr>
+                        <td>10:00am</td>
+                        <td id="mon5"></td>
+                        <td id="tue5"></td>
+                        <td id="wed5"></td>
+                        <td id="thu5"></td>
+                        <td id="fri5"></td>
+                        <td id="sat5"></td>
+                        <td id="sun5"></td>
+                    </tr>
+                    <tr>
+                        <td>10:30am</td>
+                        <td id="mon6"></td>
+                        <td id="tue6"></td>
+                        <td id="wed6"></td>
+                        <td id="thu6"></td>
+                        <td id="fri6"></td>
+                        <td id="sat6"></td>
+                        <td id="sun6"></td>
+                    </tr>
+                    <tr>
+                        <td>11:00am</td>
+                        <td id="mon7"></td>
+                        <td id="tue7"></td>
+                        <td id="wed7"></td>
+                        <td id="thu7"></td>
+                        <td id="fri7"></td>
+                        <td id="sat7"></td>
+                        <td id="sun7"></td>
+                    </tr>
+                    <tr>
+                        <td>11:30am</td>
+                        <td id="mon8"></td>
+                        <td id="tue8"></td>
+                        <td id="wed8"></td>
+                        <td id="thu8"></td>
+                        <td id="fri8"></td>
+                        <td id="sat8"></td>
+                        <td id="sun8"></td>
+                    </tr>
+                    <tr>
+                        <td>12:00pm</td>
+                        <td id="mon9"></td>
+                        <td id="tue9"></td>
+                        <td id="wed9"></td>
+                        <td id="thu9"></td>
+                        <td id="fri9"></td>
+                        <td id="sat9"></td>
+                        <td id="sun9"></td>
+                    </tr>
+                    <tr>
+                        <td>12:30pm</td>
+                        <td id="mon10"></td>
+                        <td id="tue10"></td>
+                        <td id="wed10"></td>
+                        <td id="thu10"></td>
+                        <td id="fri10"></td>
+                        <td id="sat10"></td>
+                        <td id="sun10"></td>
+                    </tr>
+                    <tr>
+                        <td>1:00pm</td>
+                        <td id="mon11"></td>
+                        <td id="tue11"></td>
+                        <td id="wed11"></td>
+                        <td id="thu11"></td>
+                        <td id="fri11"></td>
+                        <td id="sat11"></td>
+                        <td id="sun11"></td>
+                    </tr>
+                    <tr>
+                        <td>1:30pm</td>
+                        <td id="mon12"></td>
+                        <td id="tue12"></td>
+                        <td id="wed12"></td>
+                        <td id="thu12"></td>
+                        <td id="fri12"></td>
+                        <td id="sat12"></td>
+                        <td id="sun12"></td>
+                    </tr>
+                    <tr>
+                        <td>2:00pm</td>
+                        <td id="mon13"></td>
+                        <td id="tue13"></td>
+                        <td id="wed13"></td>
+                        <td id="thu13"></td>
+                        <td id="fri13"></td>
+                        <td id="sat13"></td>
+                        <td id="sun13"></td>
+                    </tr>
+                    <tr>
+                        <td>2:30pm</td>
+                        <td id="mon14"></td>
+                        <td id="tue14"></td>
+                        <td id="wed14"></td>
+                        <td id="thu14"></td>
+                        <td id="fri14"></td>
+                        <td id="sat14"></td>
+                        <td id="sun14"></td>
+                    </tr>
+                    <tr>
+                        <td>3:00pm</td>
+                        <td id="mon15"></td>
+                        <td id="tue15"></td>
+                        <td id="wed15"></td>
+                        <td id="thu15"></td>
+                        <td id="fri15"></td>
+                        <td id="sat15"></td>
+                        <td id="sun15"></td>
+                    </tr>
+                    <tr>
+                        <td>3:30pm</td>
+                        <td id="mon16"></td>
+                        <td id="tue16"></td>
+                        <td id="wed16"></td>
+                        <td id="thu16"></td>
+                        <td id="fri16"></td>
+                        <td id="sat16"></td>
+                        <td id="sun16"></td>
+                    </tr>
+                    <tr>
+                        <td>4:00pm</td>
+                        <td id="mon17"></td>
+                        <td id="tue17"></td>
+                        <td id="wed17"></td>
+                        <td id="thu17"></td>
+                        <td id="fri17"></td>
+                        <td id="sat17"></td>
+                        <td id="sun17"></td>
+                    </tr>
+                    <tr>
+                        <td>4:30pm</td>
+                        <td id="mon18"></td>
+                        <td id="tue18"></td>
+                        <td id="wed18"></td>
+                        <td id="thu18"></td>
+                        <td id="fri18"></td>
+                        <td id="sat18"></td>
+                        <td id="sun18"></td>
+                    </tr>
+                    <tr>
+                        <td>5:00pm</td>
+                        <td id="mon19"></td>
+                        <td id="tue19"></td>
+                        <td id="wed19"></td>
+                        <td id="thu19"></td>
+                        <td id="fri19"></td>
+                        <td id="sat19"></td>
+                        <td id="sun19"></td>
+                    </tr>
+                    <tr>
+                        <td>5:30pm</td>
+                        <td id="mon20"></td>
+                        <td id="tue20"></td>
+                        <td id="wed20"></td>
+                        <td id="thu20"></td>
+                        <td id="fri20"></td>
+                        <td id="sat20"></td>
+                        <td id="sun20"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./HW2.js"></script>
+</body>
+</html>

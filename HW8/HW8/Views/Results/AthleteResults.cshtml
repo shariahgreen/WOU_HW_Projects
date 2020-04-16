@@ -1,0 +1,39 @@
+﻿@model  IEnumerable<HW8.Models.Result>
+@{
+    ViewBag.Title = "AthleteResults";
+}
+
+@{SelectList athletelist = ViewBag.athletelist;}
+
+<h2>Athlete Results</h2>
+
+<div class="form-group">
+    <div class="col-md-10">
+        @using (Html.BeginForm("AthleteResults", "Results", FormMethod.Get))
+        {           
+            @Html.DropDownList("Athlete", athletelist)
+            <input type="submit" value="search" />
+        }
+    </div>
+</div>
+
+<table class="table">
+@foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Meet.MeetDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Meet.MeetLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Race.RaceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RaceTime)
+            </td>
+        </tr>
+    }
+
+</table>

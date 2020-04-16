@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "RGB Color";
+}
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Enter an RGB color to see what it looks like.</p>
+
+<form method="get" action="">
+    <div>
+        <label for="red">Red</label>
+        <input type="number" name="red" id="red" step="1" min="0" max="255" pattern="[0-9]*">
+    </div>
+    <div>
+        <label for="green">Green</label>
+        <input type="number" name="green" id="green" step="1" min="0" max="255" pattern="[0-9]*">
+    </div>
+    <div>
+        <label for="blue">Blue</label>
+        <input type="number" name="blue" id="blue" step="1" min="0" max="255" pattern="[0-9]*">
+    </div>
+
+    <input type="submit" value="Submit" id="submit">
+</form>

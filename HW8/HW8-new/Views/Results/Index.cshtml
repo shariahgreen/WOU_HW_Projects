@@ -1,0 +1,51 @@
+﻿@model IEnumerable<HW8_new.Models.Result>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Athlete.AthleteName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meet.MeetLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Race.RaceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RaceTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Athlete.AthleteName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meet.MeetLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Race.RaceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RaceTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

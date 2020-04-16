@@ -1,0 +1,68 @@
+﻿@using Newtonsoft.Json.Linq;
+@using Newtonsoft.Json;
+@using HW7.Controllers;
+
+@{
+    ViewBag.Title = "Home Page";
+    //var userInfo = JsonConvert.DeserializeObject(ViewBag.userInfo.Data);
+    //var user = JsonConvert.DeserializeObject((string)userInfo[0]);
+    //JObject userInfo = JObject.Parse(ViewBag.userInfo);
+    List<HW7.Controllers.HomeController.Repo> repoInfo = ViewBag.repoInfo;
+    HW7.Controllers.HomeController.Info userInfo = ViewBag.userInfo;
+    //string user = ViewBag.userInfo;
+    //var userInf = user.Data.ToString();
+    //userInf = userInf.Replace("=", ":");
+    //var userInfo = JObject.Parse(user);
+    //JObject user = JObject.Parse((string)userInfo[0]);
+    //var userInf = JsonConvert.DeserializeObject(user).ToString();
+    //JObject userInfo = JObject.Parse(user);
+    //var repoInfo = JsonConvert.SerializeObject(ViewBag.repoInfo);
+    //JObject repoInfo = JObject.Parse(ViewBag.repoInfo);
+}
+
+<div class="jumbotron" style="border:2px solid black">
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="@userInfo.user_imageUrl" height="300" width="300" />
+        </div>
+        <div class="col-lg-8">
+            <h3 class="text-center"><a href="@userInfo.user_url">@userInfo.user_name</a></h3>
+            <h4 class="text-center">@userInfo.user_login</h4>
+            <h4 class="text-center">@userInfo.user_email</h4>
+            <h4 class="text-center">@userInfo.user_company</h4>
+            <h4 class="text-center">@userInfo.user_location</h4>
+        </div>
+    </div>
+</div>
+
+@foreach (var repo in repoInfo)
+{
+<div class="col-md-4">
+    <div class="card text-white mb-3 table-bordered">
+        <div class="card-body">
+            <h5><a href="@repo.repo_url">Repository: @repo.repo_name</a></h5>
+            <h5>Owner: @repo.repo_owner</h5>
+            <h5>Last Updated: @repo.repo_updated</h5> 
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="@repo.repo_image" height="50" width="50" />
+                </div>
+                <div class="col-md-2">
+                    @{string commitInfo = repo.repo_name + "," + repo.repo_owner;}
+                    <input class="request" name="@commitInfo" type="button" value="Commit History" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+<div class="row" style="margin-top: 50px;">
+    <table id="commits" class="table-bordered">
+
+    </table>
+</div>
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/main.js"></script>
+}

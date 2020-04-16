@@ -1,0 +1,41 @@
+    a:link {
+        color: blue;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: blueviolet;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: red;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        text-align: center;
+    }
+    tr:hover {
+        background-color: #918e8e;
+    }
+    table {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    ul {
+        list-style-type: square;
+        color: black;
+    }
+    ol {
+        list-style-type: upper-roman;
+        color: black;
+    }

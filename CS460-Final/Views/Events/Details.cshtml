@@ -1,0 +1,70 @@
+﻿@model CS460_Final.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+    int id = ViewBag.id;
+}
+
+<h2>Event Details</h2>
+<p id="eventtitle">@id</p>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Event Title:
+        </dt>
+
+        <dd id="title">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            Start Date/Time:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Start)
+        </dd>
+
+        <dt>
+            Duration (Hours):
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location):
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            Event Coordinator:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.First) @Html.DisplayFor(model => model.Person.Last)
+        </dd>
+
+        <dt class="text-danger">
+            Current RSVPs:
+        </dt>
+
+        <dd id="rsvp_num" class="text-danger">
+
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/main.js"></script>
+}

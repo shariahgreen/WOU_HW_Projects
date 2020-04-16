@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Results";
+}
+
+    <div class="jumbotron">
+        <h1>View Results</h1>
+        <p class="lead">View race results and individual athlete results here!</p>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Athlete Results</h2>
+            <p>
+                Click here to view all of an athlete's results!
+            </p>
+            @Html.ActionLink("Athlete Results", "AthleteResults", "Results", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="col-md-6">
+            <h2>Race Results</h2>
+            <p>
+                Click here to view an athlete's individual race results!
+            </p>
+            @Html.ActionLink("Race Results", "RaceResults", "Results", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+    </div>

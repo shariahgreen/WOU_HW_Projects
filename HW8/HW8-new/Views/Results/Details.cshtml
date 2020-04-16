@@ -1,0 +1,50 @@
+﻿@model HW8_new.Models.Result
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Result</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Athlete.AthleteName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Athlete.AthleteName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Meet.MeetLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meet.MeetLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Race.RaceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Race.RaceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RaceTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RaceTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

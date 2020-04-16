@@ -1,0 +1,115 @@
+﻿@model HW6.Models.ViewModels.StockItemDetailsViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<h4>StockItem</h4>
+<div class="row">
+    <div class="col-lg-6">
+        <table>
+            <thead>Stock Item</thead>
+            <tr>
+                <td>Name: </td>
+                <td>@Html.DisplayFor(model => model.Name)</td>
+            </tr>
+            <tr>
+                <td>Size: </td>
+                <td>@Html.DisplayFor(model => model.Size)</td>
+            </tr>
+            <tr>
+                <td>Price: </td>
+                <td>@Html.DisplayFor(model => model.Price)</td>
+            </tr>
+            <tr>
+                <td>Weight: </td>
+                <td>@Html.DisplayFor(model => model.Weight)</td>
+            </tr>
+            <tr>
+                <td>Lead Time: </td>
+                <td>@Html.DisplayFor(model => model.LeadTime)</td>
+            </tr>
+            <tr>
+                <td>Valid Since: </td>
+                <td>@Html.DisplayFor(model => model.ValidSince)</td>
+            </tr>
+            <tr>
+                <td>Origin: </td>
+                <td>@Html.DisplayFor(model => model.Origin)</td>
+            </tr>
+            <tr>
+                <td>Tags: </td>
+                <td>@Html.DisplayFor(model => model.Tags)</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-lg-6">
+        //image here
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <table>
+            <thead>Supplier Profile</thead>
+            <tr>
+                <td>Company: </td>
+                <td>@Html.DisplayNameFor(model => model.SupplierName)</td>
+            </tr>
+            <tr>
+                <td>Phone: </td>
+                <td>@Html.DisplayFor(model => model.SupplierPhone)</td>
+            </tr>
+            <tr>
+                <td>Fax: </td>
+                <td>@Html.DisplayFor(model => model.SupplierFax)</td>
+            </tr>
+            <tr>
+                <td>Website: </td>
+                <td>@Html.DisplayFor(model => model.SupplierWebsite)</td>
+            </tr>
+            <tr>
+                <td>Contact: </td>
+                <td>@Html.DisplayFor(model => model.SupplierContactName)</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <table>
+            <thead>Top Purchasers</thead>
+            <tr>
+                <th>Customer Name</th>
+                <th>Total Quantity</th>
+            </tr>
+            @foreach(var item in Model.TopPurchasers)
+            {
+                <tr>
+                    <td>@item.CustomerName</td>
+                    <td>@item.CustomerName</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-lg-6">
+        <table>
+            <thead>Sales History Summary</thead>
+            <tr>
+                <td>Orders:</td>
+                <td>@Html.DisplayFor(model => model.Orders)</td>
+            </tr>
+            <tr>
+                <td>Gross Sales:</td>
+                <td>@Html.DisplayFor(model => model.GrossSales)</td>
+            </tr>
+            <tr>
+                <td>Gross Profits</td>
+                <td>@Html.DisplayFor(model => model.GrossProfits)</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Back to Search", "Index")
+</p>

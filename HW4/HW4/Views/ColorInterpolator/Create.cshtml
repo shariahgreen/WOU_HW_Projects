@@ -1,0 +1,40 @@
+﻿@using System.Drawing; 
+@{
+    ViewBag.Title = "Color Interpolation";
+}
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Interpolate from one color to another.</p>
+<p>Please enter a color in hexadecimal format: #AABBCC</p>
+
+<div class="row">
+    <div class="col-md-6">
+        @using(Html.BeginForm("Create", "ColorInterpolator", FormMethod.Post))
+        {
+            <div class="form-group">
+                @Html.Label("col1", "Color 1: ")
+                @Html.TextBox("col1", null, new { @class = "form-control", type = "text", pattern =  "#[0-9A-F]{6}"})
+                @Html.Label("col2", "Color 2: ")
+                @Html.TextBox("col2", null, new { @class = "form-control", type = "text", pattern =  "#[0-9A-F]{6}" })
+                @Html.Label("num", "Number of Colors: ")
+                @Html.TextBox("num", null, new { @class = "form-control", type = "number", min="0" })
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        }
+    </div>
+    <div class="col-md-6">
+        @if(ViewBag.Success == true)
+        {
+            <table>
+                @foreach (var color in (IEnumerable<string>)ViewBag.ColorList)
+                {
+                    <tr>
+                        <td style="width:200px" align="center">@color</td>
+                        <td style="width:200px" bgcolor=@color></td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
+</div>

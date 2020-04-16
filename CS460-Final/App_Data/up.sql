@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[Persons]
+(
+	[ID]		INT IDENTITY (1,1)	NOT NULL,
+	[First]		NVARCHAR(128)		NOT NULL,
+	[Last]		NVARCHAR(128)		NOT NULL,
+	CONSTRAINT [PK_dbo.Persons] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
+CREATE TABLE [dbo].[Events]
+(
+	[ID]			INT IDENTITY (1,1)	NOT NULL,
+	[Title]			NVARCHAR(128)		NOT NULL,
+	[Start]			DATETIME			NOT NULL,
+	[Duration]		INT					NOT NULL,
+	[Location]		NVARCHAR(128)		NOT NULL,
+	[Coordinator]	INT					NOT NULL,
+	CONSTRAINT [PK_dbo.Events] PRIMARY KEY CLUSTERED ([ID] ASC),
+	CONSTRAINT [FK_dbo.Events.Coordinator] FOREIGN KEY ([Coordinator]) REFERENCES [dbo].[Persons] ([ID]) ON DELETE CASCADE
+);
+
+CREATE TABLE [dbo].[RSVPs]
+(
+	[ID]		INT IDENTITY (1,1)		NOT NULL,
+	[Event]		INT						NOT NULL,
+	[Person]	INT						NOT NULL,
+	[Timestamp]	DATETIME				NOT NULL,
+	CONSTRAINT [PK_dbo.RSVPs] PRIMARY KEY CLUSTERED ([ID] ASC),
+	CONSTRAINT [FK_dbo.RSVPs.Event] FOREIGN KEY ([Event]) REFERENCES [dbo].[Events] ([ID]) ON DELETE CASCADE,
+	CONSTRAINT [FK_dbo.RSVPs.Person] FOREIGN KEY ([Person]) REFERENCES [dbo].[Persons] ([ID]) ON DELETE NO ACTION
+);

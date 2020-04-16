@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Homework 5</h1>
+    <p class="lead">Using T-SQL to host a local database for entering and editing homework assignments.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Homework Tracker</h2>
+        <p>
+            Add a homework assignment to track here!
+        </p>
+        <p>@Html.ActionLink("Add now", "Create", "Homework")</p>
+    </div>
+    <div class="col-md-6">
+        <h2>Homework Tracker List</h2>
+        <p>View, edit, or delete a homework assignment from a list of all homework here!</p>
+        <p>@Html.ActionLink("View now", "Index", "Homework")</p>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "RGB Color";
+}
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Enter an RGB color to see what it looks like.</p>
+
+<div class="row">
+    <div class="col-md-6">
+        @using(Html.BeginForm("RGBColor", "Home", FormMethod.Get))
+        {
+            <div class="form-group">
+                @Html.Label("red", "Red: ")
+                @Html.TextBox("red", null, new { @class = "form-control", type = "number", min="0" , max="255"})
+                @Html.Label("green", "Green: ")
+                @Html.TextBox("green", null, new { @class = "form-control", type = "number", min="0" , max="255"})
+                @Html.Label("blue", "Blue: ")
+                @Html.TextBox("blue", null, new { @class = "form-control", type = "number", min="0" , max="255"})
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        }
+    </div>
+    <div class="col-md-6">
+        @if (ViewBag.Success == true)
+        {
+            <div style="background-color: @ViewBag.Color; height: 200px; width: 200px; border: 1px solid black;"></div>
+            <h3>@ViewBag.Color</h3>
+        }
+    </div>
+</div>

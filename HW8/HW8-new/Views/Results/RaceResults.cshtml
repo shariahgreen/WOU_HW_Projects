@@ -1,0 +1,52 @@
+﻿
+
+@{
+    ViewBag.Title = "RaceResults";
+}
+@{SelectList athletelist = ViewBag.athletelist;}
+@{SelectList teamlist = ViewBag.teamlist;}
+@{SelectList racelist = ViewBag.racelist;}
+
+<h2>Race Results</h2>
+
+<div class="form-group">
+    <div class="col-md-5">
+        @using (Html.BeginForm())
+        {
+            @Html.DropDownList("Team", teamlist, new { @id = "teamID" })
+            <input id="team" name="team" type="button" value="Search Team" />
+        }
+    </div>
+    <div class="col-md-5">
+        @using (Html.BeginForm("RaceResults", "Results", FormMethod.Get))
+        {
+            if (athletelist != null)
+            {
+                @Html.DropDownList("Athlete", athletelist, new { @id = "athleteID" })
+
+            }
+            else
+            {
+                @Html.DropDownList("parent", Enumerable.Empty<SelectListItem>(), "--Search Team First--", new { @id = "athleteID" })
+            }
+            @Html.DropDownList("Race", racelist, new { @id = "raceID" })
+            <input id="athlete" name="athlete" type="button" value="Search Athlete" />
+        }
+    </div>
+</div>
+
+
+<table id="resultstable" class="table">
+   
+</table>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div id="RaceResults"></div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/main.js"></script>
+    <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+}

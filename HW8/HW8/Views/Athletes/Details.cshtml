@@ -1,0 +1,42 @@
+﻿@model HW8.Models.Athlete
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Athlete</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Team.TeamName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Team.TeamName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AthleteName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AthleteName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

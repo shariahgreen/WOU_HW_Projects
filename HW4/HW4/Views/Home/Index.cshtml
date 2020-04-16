@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>CS460 - Homework 4</h1>
+    <p class="lead">Web application using ASP.NET MVC to execute GET and POST requests from the application.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>RGB Color</h2>
+        <p>Enter an RGB value to see the color that it produces!</p>
+        <p>@Html.ActionLink("Check it out", "RGBColor", "Home")</p>
+    </div>
+    <div class="col-md-6">
+        <h2>Color Interpolation</h2>
+        <p>Enter two color values and interpolate between the colors!</p>
+        <p>@Html.ActionLink("Check it out","Create", "ColorInterpolator")</p>
+    </div>
+</div>

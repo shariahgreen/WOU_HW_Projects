@@ -1,0 +1,28 @@
+﻿@model IEnumerable<HW6.Models.StockItem>
+
+@{
+    ViewBag.Title = "World Wide Importers";
+}
+
+<h2>World Wide Importers</h2>
+
+@using (Html.BeginForm("index", "StockItem", FormMethod.Get))
+{
+    @Html.TextBox("search")
+    <input type="submit" value="search" />
+}
+
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockItemName)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.StockItemID })
+            </td>
+        </tr>
+    }
+</table>

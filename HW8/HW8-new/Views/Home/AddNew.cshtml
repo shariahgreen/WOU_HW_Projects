@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "AddNew";
+}
+
+    <div class="jumbotron">
+        <h1>Add New</h1>
+        <p class="lead">Add a new athlete to a team, add a new upcoming meet, or enter in race results!</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Add New Athletes</h2>
+            <p>
+                Click here to add a new athlete to a team!
+            </p>
+            @Html.ActionLink("New Athlete", "Create", "Athletes", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="col-md-4">
+            <h2>Add New Meets</h2>
+            <p>
+                Click here to add a new upcoming meet!
+            </p>
+            @Html.ActionLink("New Meet", "Create", "Meets", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="col-md-4">
+            <h2>Add New Results</h2>
+            <p>
+                Click here to add new race results!
+            </p>
+            @Html.ActionLink("New Results", "Create", "Results", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+    </div>
